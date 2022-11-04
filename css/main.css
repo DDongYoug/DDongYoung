@@ -15,7 +15,7 @@
 #header{
     width: 100%;
     height: 80px;
-    z-index: 9999;
+    z-index: 500;
     background-color: rgba(0, 0, 0, 0);
     padding-left: 100px;
     padding-right: 50px;
@@ -50,8 +50,8 @@
 
 #header .nav li.on a{
     font-weight: 900;
-    border-bottom: 2px solid #000;
-    color: #000;
+    border-bottom: 2px solid #6AB4E1;
+    color: #6AB4E1;
 }
 
 #header .nav .line{
@@ -88,7 +88,7 @@
     z-index: 50;
     width: 100%;
     height: 100vh;
-    background: url(../img/main_bg.jpg) no-repeat;
+    background: url(../img/main_bg.png) no-repeat;
     padding: 300px 0;
     box-sizing: border-box;
 }
@@ -104,6 +104,7 @@
     font-size: 70px;
     font-weight: 900;
     line-height: 90px;
+    color: #6AB4E1;
 }
 
 
@@ -123,7 +124,6 @@
     /* z-index: 500; */
     width: 100%;
     height: 100vh;
-    /* background-color: rgb(186, 210, 253); */
     background-color: #fff;
 }
 
@@ -131,26 +131,28 @@
     margin: 0 auto;
     width: 1000px;
     height: 100vh;
-    /* background-color: pink; */
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
 #profile_in .img_box{
     margin-right: 100px;
-    width: 380px;
-    height: 450px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
     background-color: tomato;
 }
 
 #profile_in .txt_box{
     width: 500px;
     height: 450px;
-    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #profile_in .txt_box h3{
-    margin-bottom: 50px;
     font-size: 40px;
     font-weight: 900;
     line-height: 55px;
@@ -159,6 +161,32 @@
 #profile_in .txt_box p{
     font-size: 25px;
     line-height: 35px;
+}
+
+#profile_in .site_box{
+    width: 300px;
+    height: 150px;
+    display: flex;
+
+}
+
+#profile_in .site_box a{
+    margin-right: 50px;
+    display: block;
+    width: 70px;
+    height: 80px;
+    text-align: center;
+}
+
+#profile_in .site_box img{
+    margin-bottom: 15px;
+    display: block;
+    width: 70px;
+}
+
+#profile_in .site_box span{
+    margin: 0 auto;
+    display: block;
 }
 
 
@@ -174,41 +202,12 @@
 #skill{
     width: 100%;
     height: 100vh;
-    background: url(../img/bg3.jpg) no-repeat;
+    background: url(../img/bg4.png) no-repeat;
     padding-top: 300px;
     box-sizing: border-box;
 }
 
-#skill .in_skill{
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-}
 
-#skill .skill_list{}
-
-#skill .skill_list > li{
-    float: left; 
-    margin-right: 100px; 
-    text-align: center;
-}
-
-#skill .skill_list > li > div{ 
-    width: 50px; 
-    height:300px; 
-    border:1px solid #000;
-    position: relative; 
-    overflow: hidden;
-}
-
-#skill .skill_list > li > div > .in_box{
-    width: 50px; 
-    height:300px; 
-    background-color: #716E64;
-    position: absolute; 
-    top:300px; 
-    left: 0; 
-}
 
 
 
@@ -258,6 +257,42 @@
 
 #finish h3{
     font-size: 100px;
-    font-weight: 900
-    ;
+    font-weight: 900;
+    color: #2992d3;
+}
+
+
+
+
+
+
+
+
+/* -----------------위아래이동버튼--------------- */
+#move_btn{
+    width: 100px;
+    height: 50px;
+    /* background-color: tomato; */
+    z-index: 9999;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+}
+
+#move_btn img{
+    display: block;
+    width: 50px;
+    height: 50px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#move_btn .up_btn{
+    float: left;
+    transform: rotate(-90deg);
+}
+
+#move_btn .down_btn{
+    float: right;
+    transform: rotate(90deg);
 }
