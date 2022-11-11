@@ -234,17 +234,17 @@ $(document).ready(function(){
     // contact박스
     let contactOpen='closed'
 
-    $('.contactbox_open_btn').click(()=>{
+    $('.contact_box_open_btn').click(()=>{
         if(contactOpen=='closed'){
             contactOpen='open'
-            $('#contactbox').css({display: 'block'})
+            $('#contact_box').css({display: 'block'})
         }
     })
 
-    $('.contactbox_close_btn').click(()=>{
+    $('.contact_box_close_btn').click(()=>{
         if(contactOpen=='open'){
             contactOpen='closed'
-            $('#contactbox').css({display: 'none'})
+            $('#contact_box').css({display: 'none'})
         }
     })
 
