@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YDY's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.mousewheel.min.js"></script>
+    <script src="./js/circle-progress.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- 상단고정 -->
+        <header id="header">
+            <h1 class="logo">YukDDong's</h1>
+            <ul class="nav">
+                <li><a href="#">Main</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Skill</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+
+
+
+
+
+
+        <!-- 전체 div박스 -->
+        <div id="total_box">
+            <!-- 메인 -->
+            <div id="main">
+                <div id="main_in">
+                    <h2>
+                        Hello!<br>
+                        I'm Yuk Dong Young
+                    </h2>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 프로필 -->
+            <div id="profile">
+                <div id="profile_in">
+                    <div class="img_box"></div>
+                    <div class="txt_box">
+                        <h3>
+                            Front End Developer<br>
+                            육동영입니다.
+                        </h3>
+                        <p>
+                            저는 배움과 성장에 희열을 느끼고<br>
+                            열정이 넘치며, 도전을 즐깁니다.
+                        </p>
+                        <ul class="site_box">
+                            <li>
+                                <a href="https://github.com/YukDDong/YukDDong" target="_blank">
+                                    <img src="./img/icon/github.png" alt="">
+                                    <span>Git hub</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://blog.naver.com/ekfhd5537" target="_blank">
+                                    <img src="./img/icon/naver_blog.png" alt="">
+                                    <span>Blog</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 스킬 -->
+            <div id="skill">
+                <div id="skill_in">
+                    <ul>
+                        <li>
+                            <div class="chart chart1">
+                                <strong></strong>
+                            </div>
+                            <h5>HTML</h5>
+                        </li>
+                        <li>
+                            <div class="chart chart2">
+                                <strong></strong>
+                            </div>
+                            <h5>CSS</h5>
+                        </li>
+                        <li>
+                            <div class="chart chart3">
+                                <strong></strong>
+                            </div>
+                            <h5>JQUERY</h5>
+                        </li>
+                        <li>
+                            <div class="chart chart4">
+                                <strong></strong>
+                            </div>
+                            <h5>JAVASCRIPT</h5>
+                        </li>
+                        <li>
+                            <div class="chart chart5">
+                                <strong></strong>
+                            </div>
+                            <h5>NODE.JS</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            
+
+
+
+
+
+
+
+
+            <!-- 프로젝트 -->
+            <div id="projects">
+                <div class="left_btn">left</div>
+                <div class="right_btn">right</div>
+                <div id="projects_in">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- 마치며 -->
+            <div id="contact">
+                <h3>
+                    Thank you.
+                </h3>
+                <div class="contact_box_open_btn">
+                    <span>Contact Me</span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- contact박스 -->
+        <div id="contact_box">
+            <button class="contact_box_close_btn">close</button>
+            <form id="form">
+                <div class="field">
+                    <label for="from_name">from_name</label>
+                    <input type="text" name="from_name" id="from_name">
+                </div>
+                <div class="field">
+                    <label for="to_name">to_name</label>
+                    <input type="text" name="to_name" id="to_name">
+                </div>
+                <div class="field">
+                    <label for="message">message</label>
+                    <input type="text" name="message" id="message">
+                </div>
+                <div class="field">
+                    <label for="tel">tel</label>
+                    <input type="text" name="tel" id="tel">
+                </div>
+                <div class="field">
+                    <label for="reply_to">reply_to</label>
+                    <input type="text" name="reply_to" id="reply_to">
+                </div>
+                <input type="submit" id="button" value="Send Email" >
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- 버튼 div -->
+        <!-- <div id="move_btn">
+            <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="up_btn">
+            <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="down_btn">
+        </div> -->
+    </div>
+</body>
+
+</html>
