@@ -26,7 +26,6 @@ $(document).ready(function(){
         setTimeout(() => {
             moving_stop=false
             console.log(moving_stop)
-            // clearInterval(skillAni)
         }, 1000)
     }      
 
@@ -43,18 +42,8 @@ $(document).ready(function(){
             currentEl.css('z-index','50')
             nextEl.css('z-index','30').css({left: '0', top: '0'})
             currentEl.css({top: '0'}).animate({top: '-100vh'},1000, )
-            // 첫화면 마지막화면 버튼 숨기기
-            // if(n==0){
-            //     $('#move_btn .up_btn').hide()
-            // } 
-            // if(0<n<4){
-            //     $('#move_btn .down_btn').show()
-            //     $('#move_btn .up_btn').show()
-            // }
-            // if(n==4){
-            //     $('#move_btn .down_btn').hide()
-            // }
 
+            // 첫화면 마지막화면 버튼 숨기기
             switch(n){
                 case 0:
                     $('#move_btn .up_btn').hide()
@@ -98,19 +87,7 @@ $(document).ready(function(){
             nextEl.css('z-index','50')
             nextEl.css({top: '-100vh'}).stop().animate({top: '0'},1000)
             
-            // 첫화면 마지막화면 버튼 숨기기
-            // if(n==4){
-            //     $('#move_btn .down_btn').hide()
-            // }
-            // if(1<=n<=3){
-            //     $('#move_btn .down_btn').show()
-            //     $('#move_btn .up_btn').show()
-            // }
-            // if(n==0){
-            //     $('.up_btn').hide()
-            //     console.log('ok')
-            // } 
-
+            // 첫화면 마지막화면 버튼 숨기기, 네비버튼 Class
             switch(n){
                 case 0:
                     $('#move_btn .up_btn').hide()
@@ -170,7 +147,6 @@ $(document).ready(function(){
     //스킬
 
     const skillAni=()=>{setTimeout(() => {
-        console.log('ok')
             $('.chart').circleProgress({
                 size:200,
                 //그래프 크기
@@ -187,35 +163,35 @@ $(document).ready(function(){
         
             $('.chart1').circleProgress({
                 value: 0.9,
-                fill: {gradient: ['#ff1e41', '#ff9f8e']}
+                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(90 *progress) + '<i>%</i>');
             });
         
             $('.chart2').circleProgress({
                 value: 0.8,
-                fill: {gradient: ['#ff1e41', '#ff9f8e']}
+                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(80 *progress) + '<i>%</i>');
             });
         
             $('.chart3').circleProgress({
                 value: 0.8,
-                fill: {gradient: ['#ff1e41', '#ff9f8e']}
+                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(80 *progress) + '<i>%</i>');
             });
         
             $('.chart4').circleProgress({
                 value: 0.7,
-                fill: {gradient: ['#ff1e41', '#ff9f8e']}
+                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(70 *progress) + '<i>%</i>');
             });
         
             $('.chart5').circleProgress({
                 value: 0.1,
-                fill: {gradient: ['#ff1e41', '#ff9f8e']}
+                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(10 *progress) + '<i>%</i>');
             });
@@ -223,5 +199,83 @@ $(document).ready(function(){
     }, 1000);}
             
     
+
+
+
+
+
+
+
+    // 프로젝트
+    
+
+
+
+
+
+
+
+    // 마치며
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // contact박스
+    let contactOpen='closed'
+
+    $('.contactbox_open_btn').click(()=>{
+        if(contactOpen=='closed'){
+            contactOpen='open'
+            $('#contactbox').css({display: 'block'})
+        }
+    })
+
+    $('.contactbox_close_btn').click(()=>{
+        if(contactOpen=='open'){
+            contactOpen='closed'
+            $('#contactbox').css({display: 'none'})
+        }
+    })
+
+
+
+
+
+
+
+    //emailjs
+    emailjs.init('tVuiXpFNR9keouxIi')
+
+    const btn = document.getElementById('button');
+
+    document.getElementById('form')
+    .addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Sending...';
+
+    const serviceID = 'service_gv0uxmm';
+    const templateID = 'template_nswn5ai';
+
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+        btn.value = 'Send Email';
+        alert('메일보내기 성공');
+        }, (err) => {
+        btn.value = 'Send Email';
+        alert(JSON.stringify(err));
+        });
+    });
 
 })

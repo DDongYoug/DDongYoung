@@ -11,6 +11,8 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery.mousewheel.min.js"></script>
     <script src="./js/circle-progress.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./js/main.js"></script>
 </head>
 
@@ -25,7 +27,7 @@
                 <li><a href="#">Profile</a></li>
                 <li><a href="#">Skill</a></li>
                 <li><a href="#">Projects</a></li>
-                <li><a href="#">Finish</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </header>
 
@@ -107,37 +109,38 @@
                                 <strong></strong>
                             </div>
                             <h5>HTML</h5>
-                            <p>가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
                         </li>
                         <li>
                             <div class="chart chart2">
                                 <strong></strong>
                             </div>
                             <h5>CSS</h5>
-                            <p>가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
                         </li>
                         <li>
                             <div class="chart chart3">
                                 <strong></strong>
                             </div>
                             <h5>JQUERY</h5>
-                            <p>가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
                         </li>
                         <li>
                             <div class="chart chart4">
                                 <strong></strong>
                             </div>
                             <h5>JAVASCRIPT</h5>
-                            <p>가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
                         </li>
                         <li>
                             <div class="chart chart5">
                                 <strong></strong>
                             </div>
                             <h5>NODE.JS</h5>
-                            <p>가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
                         </li>
                     </ul>
+                </div>
+            </div>
+
+
+
+            
 
 
 
@@ -146,27 +149,17 @@
 
 
 
-                    <!-- <div class="chart chart1">
-                        <strong></strong>
-                        <span class="chart_title">HTML</span>
-                    </div>
-
-                    <div class="chart chart2">
-                        <span class="chart_title">CSS</span>
-                        <strong></strong>
-                    </div>
-                    <div class="chart chart3">
-                        <span class="chart_title">JAVASCRIPT</span>
-                        <strong></strong>
-                    </div>
-                    <div class="chart chart4">
-                        <span class="chart_title">JQUERY</span>
-                        <strong></strong>
-                    </div>
-                    <div class="chart chart5">
-                        <span class="chart_title">NODE.JS</span>
-                        <strong></strong>
-                    </div> -->
+            <!-- 프로젝트 -->
+            <div id="projects">
+                <div class="left_btn">left</div>
+                <div class="right_btn">right</div>
+                <div id="projects_in">
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
                 </div>
             </div>
 
@@ -180,22 +173,16 @@
 
 
 
-            <!-- 프로젝트 -->
-            <div id="projects"></div>
-
-
-
-
-
-
-
 
 
             <!-- 마치며 -->
-            <div id="finish">
+            <div id="contact">
                 <h3>
                     Thank you.
                 </h3>
+                <div class="contact_box_open_btn">
+                    <span>Contact Me</span>
+                </div>
             </div>
         </div>
 
@@ -206,16 +193,46 @@
 
 
 
+        <!-- contact박스 -->
+        <div id="contact_box">
+            <button class="contact_box_close_btn">close</button>
+            <form id="form">
+                <div class="field">
+                    <label for="from_name">from_name</label>
+                    <input type="text" name="from_name" id="from_name">
+                </div>
+                <div class="field">
+                    <label for="to_name">to_name</label>
+                    <input type="text" name="to_name" id="to_name">
+                </div>
+                <div class="field">
+                    <label for="message">message</label>
+                    <input type="text" name="message" id="message">
+                </div>
+                <div class="field">
+                    <label for="tel">tel</label>
+                    <input type="text" name="tel" id="tel">
+                </div>
+                <div class="field">
+                    <label for="reply_to">reply_to</label>
+                    <input type="text" name="reply_to" id="reply_to">
+                </div>
+                <input type="submit" id="button" value="Send Email" >
+            </form>
+        </div>
 
 
 
 
 
-    <!-- 버튼 div -->
-    <div id="move_btn">
-        <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="up_btn">
-        <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="down_btn">
-    </div>
+
+
+
+        <!-- 버튼 div -->
+        <!-- <div id="move_btn">
+            <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="up_btn">
+            <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="down_btn">
+        </div> -->
     </div>
 </body>
 
