@@ -8,17 +8,19 @@
     <title>YDY's Portfolio</title>
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="./css/main(480).css">
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery.mousewheel.min.js"></script>
     <script src="./js/circle-progress.js"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/main(480).js" media="screen and (max-width: 480px)"></script>
 </head>
 
 <body>
+    <!-- PC화면 -->
     <div id="wrap">
-
         <!-- 상단고정 -->
         <header id="header">
             <h1 class="logo">YukDDong's</h1>
@@ -61,6 +63,7 @@
 
             <!-- 프로필 -->
             <div id="profile">
+                <h4 id="profile_ttl">Profile</h4>
                 <div id="profile_in">
                     <div class="img_box"></div>
                     <div class="txt_box">
@@ -102,6 +105,7 @@
 
             <!-- 스킬 -->
             <div id="skill">
+                <h4 id="skill_ttl">Skill</h4>
                 <div id="skill_in">
                     <ul>
                         <li>
@@ -135,6 +139,47 @@
                             <h5>NODE.JS</h5>
                         </li>
                     </ul>
+                </div>
+                <div id="skill_in_m">
+                    <ul>
+                        <li>
+                            <div>
+                                <div class="chart chart1">
+                                    <strong></strong>
+                                </div>
+                                <h5>HTML</h5>
+                            </div>
+                            <div>
+                                <div class="chart chart2">
+                                    <strong></strong>
+                                </div>
+                                <h5>CSS</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="chart chart3">
+                                    <strong></strong>
+                                </div>
+                                <h5>JQUERY</h5>
+                            </div>
+                            <div>
+                                <div class="chart chart4">
+                                    <strong></strong>
+                                </div>
+                                <h5>JAVASCRIPT</h5>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="chart chart5">
+                                    <strong></strong>
+                                </div>
+                                <h5>NODE.JS</h5>
+                            </div>
+                        </li>
+                    </ul>
+
                 </div>
             </div>
 
@@ -220,20 +265,28 @@
                 <input type="submit" id="button" value="Send Email" >
             </form>
         </div>
-
-
-
-
-
-
-
-
-        <!-- 버튼 div -->
-        <!-- <div id="move_btn">
-            <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="up_btn">
-            <img src="./img/icon/free-icon-font-angle-double-small-right-3916826.png" alt="" class="down_btn">
-        </div> -->
     </div>
+
+
+
+
+
+    <!-- 모바일화면 -->
+    <!-- <div id="wrap_m"> -->
+
+        <!-- 상단 -->
+        <!-- <header id="header_m">
+            <h1 class="logo">YDY</h1>
+            <div class="nav_m_btn"></div>
+            <ul class="nav_m">
+                <li><a href="#">Main</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Skill</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+    </div> -->
 </body>
 
 </html>

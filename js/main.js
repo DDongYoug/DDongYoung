@@ -1,19 +1,18 @@
 $(document).ready(function(){
-    
-    $('#move_btn .up_btn').hide()
-    $('.nav li').eq(0).addClass('on')
+
+    $('#wrap .nav li').eq(0).addClass('on')
     //네비 버튼 클릭시 해당div로 이동
     let current=0  //현재 div 요소의 상태값을 설정
     let moving_stop=false  //지연함수를 주기 위한 상태값설정
 
-    $('.nav li').click(function(e){
+    $('#wrap .nav li').click(function(e){
         e.preventDefault()
         var i=$(this).index()
         
         if(i>current){
-            moveup(i)
+            moveUp(i)
         }else if(i<current){
-            movedown(i)
+            moveDown(i)
         }else{
             return
         }
@@ -25,49 +24,36 @@ $(document).ready(function(){
     const setTimeoutMS=function(){
         setTimeout(() => {
             moving_stop=false
-            console.log(moving_stop)
         }, 1000)
     }      
 
 
-    function moveup(n){
+    function moveUp(n){
         if(moving_stop==false){
             moving_stop=true
-            console.log(moving_stop)
-            $('#total_box>div').css('z-index','0')
-            $('.nav li').removeClass('on').removeClass('on1')
-            var currentEl=$('#total_box>div').eq(current)
-            var nextEl=$('#total_box>div').eq(n)    
+            $('#wrap #total_box>div').css('z-index','0')
+            $('#wrap .nav li').removeClass('on').removeClass('on1')
+            var currentEl=$('#wrap #total_box>div').eq(current)
+            var nextEl=$('#wrap #total_box>div').eq(n)    
 
             currentEl.css('z-index','50')
             nextEl.css('z-index','30').css({left: '0', top: '0'})
             currentEl.css({top: '0'}).animate({top: '-100vh'},1000, )
 
-            // 첫화면 마지막화면 버튼 숨기기
+            // 네비버튼색 바꾸기
             switch(n){
-                case 0:
-                    $('#move_btn .up_btn').hide()
-                    $('#move_btn .down_btn').show()
-                    $('.nav li').eq(n).addClass('on')
-                    break
-
-                case 1: case 3:
-                    $('#move_btn .down_btn').show()
-                    $('#move_btn .up_btn').show()
-                    $('.nav li').eq(n).addClass('on')
+                case 0: case 1: case 3:
+                    $('#wrap .nav li').eq(n).addClass('on')
                     break
 
                 case 2:
-                    $('#move_btn .down_btn').show()
-                    $('#move_btn .up_btn').show()
-                    $('.nav li').eq(n).addClass('on1') 
+                    $('#wrap .nav li').eq(n).addClass('on1') 
                     skillAni()
                     break
 
                 case 4:
-                    $('#move_btn .down_btn').hide()
-                    $('#move_btn .up_btn').show()
-                    $('.nav li').eq(n).addClass('on1')
+                    $('#wrap .nav li').eq(n).addClass('on1')
+                    break
             }
 
             current=n
@@ -75,13 +61,13 @@ $(document).ready(function(){
         }
     }
 
-    function movedown(n){
+    function moveDown(n){
         if(moving_stop==false){
             moving_stop=true
-            $('#total_box>div').css('z-index','0')
-            $('.nav li').removeClass('on').removeClass('on1')
-            var currentEl=$('#total_box>div').eq(current)
-            var nextEl=$('#total_box>div').eq(n)
+            $('#wrap #total_box>div').css('z-index','0')
+            $('#wrap .nav li').removeClass('on').removeClass('on1')
+            var currentEl=$('#wrap #total_box>div').eq(current)
+            var nextEl=$('#wrap #total_box>div').eq(n)
 
             currentEl.css('z-index','30')
             nextEl.css('z-index','50')
@@ -89,29 +75,18 @@ $(document).ready(function(){
             
             // 첫화면 마지막화면 버튼 숨기기, 네비버튼 Class
             switch(n){
-                case 0:
-                    $('#move_btn .up_btn').hide()
-                    $('#move_btn .down_btn').show()
-                    $('.nav li').eq(n).addClass('on')
-                    break
-
-                case 1: case 3:
-                    $('#move_btn .down_btn').show()
-                    $('#move_btn .up_btn').show()
-                    $('.nav li').eq(n).addClass('on')
+                case 0: case 1: case 3:
+                    $('#wrap .nav li').eq(n).addClass('on')
                     break
 
                 case 2:
-                    $('#move_btn .down_btn').show()
-                    $('#move_btn .up_btn').show()
-                    $('.nav li').eq(n).addClass('on1')
+                    $('#wrap .nav li').eq(n).addClass('on1')
                     skillAni()
                     break
 
                 case 4:
-                    $('#move_btn .down_btn').hide()
-                    $('#move_btn .up_btn').show()
-                    $('.nav li').eq(n).addClass('on1')
+                    $('#wrap .nav li').eq(n).addClass('on1')
+                    break
             }
             
             current=n
@@ -119,35 +94,22 @@ $(document).ready(function(){
         }
         
     }
-    
-
-    //버튼 click시 div한개씩 이동
-    $('.down_btn').click(function(){
-        var m=current+1
-        moveup(m)
-    })
-
-    $('.up_btn').click(function(){
-        var m=current-1
-        movedown(m)
-    })
-
 
     //마우스휠 이벤트
-    $('body').on("mousewheel", function(event, delta){
+    $('#wrap').on("mousewheel", function(event, delta){
         if(current>0 && delta>0){
             var mousewheelUp=current-1
-            movedown(mousewheelUp)
+            moveDown(mousewheelUp)
         } else if(current<4 && delta<0){
             var mousewheelDown=current+1
-            moveup(mousewheelDown)
+            moveUp(mousewheelDown)
         }
     })
 
     //스킬
 
     const skillAni=()=>{setTimeout(() => {
-            $('.chart').circleProgress({
+            $('#wrap .chart').circleProgress({
                 size:200,
                 //그래프 크기
                 startAngle: -Math.PI/2 ,
@@ -161,35 +123,35 @@ $(document).ready(function(){
                 fill: {gradient: ['#ff1e41', '#ff9f8e']},
             })
         
-            $('.chart1').circleProgress({
+            $('#wrap .chart1').circleProgress({
                 value: 0.9,
                 fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(90 *progress) + '<i>%</i>');
             });
         
-            $('.chart2').circleProgress({
+            $('#wrap .chart2').circleProgress({
                 value: 0.8,
                 fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(80 *progress) + '<i>%</i>');
             });
         
-            $('.chart3').circleProgress({
+            $('#wrap .chart3').circleProgress({
                 value: 0.8,
                 fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(80 *progress) + '<i>%</i>');
             });
         
-            $('.chart4').circleProgress({
+            $('#wrap .chart4').circleProgress({
                 value: 0.7,
                 fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
                 $(this).find('strong').html(Math.round(70 *progress) + '<i>%</i>');
             });
         
-            $('.chart5').circleProgress({
+            $('#wrap .chart5').circleProgress({
                 value: 0.1,
                 fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
             }).on('circle-animation-progress', function(event, progress) {
@@ -234,17 +196,17 @@ $(document).ready(function(){
     // contact박스
     let contactOpen='closed'
 
-    $('.contact_box_open_btn').click(()=>{
+    $('#wrap .contact_box_open_btn').click(()=>{
         if(contactOpen=='closed'){
             contactOpen='open'
-            $('#contact_box').css({display: 'block'})
+            $('#wrap #contact_box').css({display: 'block'})
         }
     })
 
-    $('.contact_box_close_btn').click(()=>{
+    $('#wrap .contact_box_close_btn').click(()=>{
         if(contactOpen=='open'){
             contactOpen='closed'
-            $('#contact_box').css({display: 'none'})
+            $('#wrap #contact_box').css({display: 'none'})
         }
     })
 
