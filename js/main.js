@@ -1,6 +1,6 @@
 $(document).ready(function(){
-
-    $('#wrap .nav li').eq(0).addClass('on')
+    if(window.innerWidth>480){
+        $('#wrap .nav li').eq(0).addClass('on')
     //네비 버튼 클릭시 해당div로 이동
     let current=0  //현재 div 요소의 상태값을 설정
     let moving_stop=false  //지연함수를 주기 위한 상태값설정
@@ -240,4 +240,6 @@ $(document).ready(function(){
         });
     });
 
+    }
+    
 })

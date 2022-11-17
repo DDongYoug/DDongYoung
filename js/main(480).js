@@ -1,10 +1,10 @@
 $(document).ready(function(){
     $('#wrap .chart').circleProgress({
-        size:200,
+        size:150,
         //그래프 크기
         startAngle: -Math.PI/2 ,
         //시작지점 (기본값 Math.PI)
-        thickness:30,
+        thickness:20,
         //그래프두께
         fill: {gradient: ['#ff1e41', '#ff9f8e']},
         //그래프 선 색

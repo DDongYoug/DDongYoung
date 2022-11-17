@@ -49,7 +49,7 @@
 }
 
 #main_in h2{
-    left: 10%;
+    left: 5%;
 }
 
 
@@ -162,29 +162,35 @@
 #skill_in_m ul li{
     margin-bottom: 20px;
     width: 100%;
-    height: 250px;
+    height: 200px;
     /* background-color: tomato; */
     display: flex;
     justify-content: space-between;
 }
 
+#skill_in_m ul li:last-child{
+    margin-bottom: 0;
+}
+
 #skill_in_m ul li>div{
-    width: 50%;
-    height: 250px;
+    width: 45%;
+    height: 200px;
+    text-align: center;
 }
 
 #skill_in_m .chart{
     position: relative;
+    text-align: center;
 }
 
 #skill_in_m .chart>strong{
     position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -25px;
-    margin-top: -15px;
-    width: 50px;
-    height: 30px;
+    left: 0;
+    top: 40%;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 50px;
     font-size: 30px;
     color: #fff;
 }
@@ -209,6 +215,16 @@
 #projects{
     width: 100%;
     height: auto;
+    padding-top: 100px;
+}
+
+#projects_ttl{
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 40px;
+    font-weight: 900;
 }
 
 #projects .left_btn{
@@ -236,3 +252,57 @@
     margin-bottom: 10px;
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------마치며------------------- */
+#contact{
+    width: 100%;
+    height: auto;
+    background: url(../img/finish_bg.png) no-repeat 50% 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    position: relative;
+    /* line-height: 100vh; */
+}
+
+#contact h3{
+    font-size: 50px;
+    font-weight: 900;
+    color: #3888ff;
+}
+
+#contact .contact_box_open_btn{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    position: relative;
+    background: url(../img/icon/cloud-computing_1.png) no-repeat 50% 0;
+    background-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#contact .contact_box_open_btn span{
+    margin-top: 20px;
+    margin-left: -10px;
+    color: rgb(99, 128, 255);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+
