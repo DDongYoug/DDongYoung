@@ -85,6 +85,8 @@
 
 #total_box>div{
     position: absolute;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
 }
 
 
@@ -158,10 +160,11 @@
 
 #profile_in .img_box{
     margin-right: 100px;
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 450px;
     border-radius: 50%;
-    background-color: tomato;
+    background: url(../img/IMG_20190131_133656_505.jpg) no-repeat 50% 100%;
+    background-size: 500px;
 }
 
 #profile_in .txt_box{
@@ -311,31 +314,32 @@
 #projects .left_btn{
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
     left: 200px;
     top: 50%;
-    margin-top: -20px;
-    background-color: #3888ff;
+    position: absolute;
+    margin-top: -50px;
     cursor: pointer;
+}
+
+#projects .left_btn img{
+    width: 50px;
+    height: auto;
+    transform: rotate(180deg);
 }
 
 #projects .right_btn{
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
     right: 200px;
     top: 50%;
-    margin-top: -20px;
-    background-color: #3888ff;
+    position: absolute;
+    margin-top: -50px;
     cursor: pointer;
+}
+
+#projects .right_btn img{
+    width: 50px;
+    height: auto;
 }
 
 #projects_in{
