@@ -469,7 +469,8 @@
     margin-top: 200px;
     width: 500px;
     height: 500px;
-    background-color: black;
+    background-color: #6AB4E1;
+    border-radius: 5%;
 }
 
 #form .field {
@@ -481,9 +482,12 @@
     display: block;
     font-size: 12px;
     color: #fff;
-    }
+    text-align: center;
+
+}
 
 #form .field input {
+    margin: 0 auto;
     display: block;
     min-width: 250px;
     line-height: 1.5;
@@ -491,6 +495,7 @@
     }
 
 #form input[type="submit"] {
+    margin: 0 auto;
     display: block;
     padding: 6px 30px;
     font-size: 14px;
@@ -506,32 +511,14 @@
 
 
 
-/* -----------------위아래이동버튼--------------- */
-#move_btn{
-    margin-left: -50px;
-    width: 100px;
-    height: 50px;
-    /* background-color: tomato; */
+/* 마우스 따라다니는 원 */
+#mouse_move_circle{
     z-index: 9999;
     position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50%;
     left: 50%;
-    bottom: 10px;
-}
-
-#move_btn img{
-    display: block;
-    width: 50px;
-    height: 50px;
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-#move_btn .up_btn{
-    float: left;
-    transform: rotate(-90deg);
-}
-
-#move_btn .down_btn{
-    float: right;
-    transform: rotate(90deg);
+    border-radius: 50%;
+    background-color: rgba(65, 112, 240, 0.5);
 }

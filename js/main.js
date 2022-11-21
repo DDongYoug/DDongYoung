@@ -242,4 +242,17 @@ $(document).ready(function(){
 
     }
     
+    // 마우스 따라다니는 원
+    var mouseCircle=$('#mouse_move_circle')
+
+    $(window).on('mousemove', (e)=>{
+        mouseCircle.css('left',e.pageX).css('top',e.pageY)
+    })
+
+    $('a').on('mouseenter',()=>{
+        mouseCircle.css('width',50+'px').css('height',50+'px')
+    })
+    $('a').on('mouseleave',()=>{
+        mouseCircle.css('width',30+'px').css('height',30+'px')
+    })
 })
