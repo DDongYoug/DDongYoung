@@ -96,7 +96,7 @@ $(document).ready(function(){
     }
 
     //마우스휠 이벤트
-    $('#wrap').on("mousewheel", function(event, delta){
+    $('#total_box').on("mousewheel", function(event, delta){
         if(current>0 && delta>0){
             var mousewheelUp=current-1
             moveDown(mousewheelUp)
