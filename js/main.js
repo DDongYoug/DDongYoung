@@ -25,7 +25,7 @@ $(document).ready(function(){
         setTimeout(() => {
             moving_stop=false
         }, 1000)
-    }      
+    } 
 
 
     function moveUp(n){
@@ -37,24 +37,34 @@ $(document).ready(function(){
             var nextEl=$('#wrap #total_box>div').eq(n)    
 
             currentEl.css('z-index','50')
-            nextEl.css('z-index','30').css({left: '0', top: '0'})
-            currentEl.css({top: '0'}).animate({top: '-100vh'},1000, )
+            nextEl.css('z-index','30').css({left: '0', top: '0'}).css('animation','zoom-a 5s ease-out')
+            currentEl.css({top: '0'}).animate({top: '-100vh'},1000)
 
             // 네비버튼색 바꾸기
             switch(n){
-                case 0: case 1: case 3:
+                case 0: 
+                    $('#wrap .nav li').eq(n).addClass('on')
+                    zoomout(n)
+                    break
+                
+                case 1: case 3:
                     $('#wrap .nav li').eq(n).addClass('on')
                     break
 
+                
                 case 2:
-                    $('#wrap .nav li').eq(n).addClass('on1') 
+                    $('#wrap .nav li').eq(n).addClass('on1')
                     skillAni()
+                    zoomout(n)
                     break
 
                 case 4:
                     $('#wrap .nav li').eq(n).addClass('on1')
+                    zoomout(n)
                     break
             }
+
+            
 
             current=n
             setTimeoutMS()
@@ -71,21 +81,29 @@ $(document).ready(function(){
 
             currentEl.css('z-index','30')
             nextEl.css('z-index','50')
-            nextEl.css({top: '-100vh'}).stop().animate({top: '0'},1000)
+            nextEl.css({top: '-100vh'}).animate({top: '0'},1000)
             
             // 첫화면 마지막화면 버튼 숨기기, 네비버튼 Class
             switch(n){
-                case 0: case 1: case 3:
+                case 0: 
+                    $('#wrap .nav li').eq(n).addClass('on')
+                    zoomout(n)
+                    break
+                
+                case 1: case 3:
                     $('#wrap .nav li').eq(n).addClass('on')
                     break
 
+                
                 case 2:
                     $('#wrap .nav li').eq(n).addClass('on1')
                     skillAni()
+                    zoomout(n)
                     break
 
                 case 4:
                     $('#wrap .nav li').eq(n).addClass('on1')
+                    zoomout(n)
                     break
             }
             
@@ -105,6 +123,16 @@ $(document).ready(function(){
             moveUp(mousewheelDown)
         }
     })
+
+
+    //배경확대
+    const zoomout=(k)=>{
+        let zoomdiv=$('#wrap #total_box>div').eq(k)
+
+        $('#wrap #total_box>div').css('animation','none')
+        zoomdiv.css('animation','zoom-a 5s ease-out')
+
+    }
 
     //스킬
 
@@ -256,3 +284,4 @@ $(document).ready(function(){
         mouseCircle.css('width',30+'px').css('height',30+'px')
     })
 })
+

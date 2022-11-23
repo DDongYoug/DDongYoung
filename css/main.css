@@ -2,6 +2,7 @@
     width: 100%;
     height: auto;
     position: relative;
+    overflow: hidden;
 }
 
 
@@ -109,6 +110,7 @@
     background: url(../img/main_bg.jpg) no-repeat  50% 0;
     padding: 300px 0;
     box-sizing: border-box;
+    background-size: 100%;
 }
 
 #main_in{
@@ -228,6 +230,12 @@
     background: url(../img/blue-gf5c94b144_1920.jpg) no-repeat 50% 0;
     padding-top: 300px;
     box-sizing: border-box;
+    /* animation: zoom-a 5s ease-out; */
+}
+
+@keyframes zoom-a{
+    0% {background-size: 150% auto;}
+    100% {background-size: 100% auto;}
 }
 
 #skill_ttl{
