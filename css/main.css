@@ -541,16 +541,3 @@
 
 
 
-
-
-/* 마우스 따라다니는 원 */
-#mouse_move_circle{
-    z-index: 9999;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    background-color: rgba(65, 112, 240, 0.5);
-}
