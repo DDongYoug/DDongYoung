@@ -85,6 +85,7 @@
 }
 
 #total_box>div{
+    z-index: 0;
     position: absolute;
     box-sizing: border-box;
     border-bottom: 1px solid #ccc;
