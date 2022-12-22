@@ -6,12 +6,6 @@
 }
 
 
-
-
-
-
-
-
 /* --------------------상단------------------- */
 #header{
     width: 100%;
@@ -31,7 +25,7 @@
     float: left;
     font-size: 40px;
     font-weight: 900;
-    /* color: rgb(125, 125, 125); */
+    cursor: pointer;
 }
 
 #header .nav{
@@ -105,13 +99,11 @@
 #main{
     top: 0;
     left: 0;
-    z-index: 50;
     width: 100%;
     height: 100vh;
-    background: url(../img/main_bg.jpg) no-repeat  50% 0;
+    background: url(../img/main_bg.png) no-repeat  50% 0;
     padding: 300px 0;
     box-sizing: border-box;
-    background-size: 100%;
 }
 
 #main_in{
@@ -145,7 +137,8 @@
 #profile{
     width: 100%;
     height: 100vh;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-image: linear-gradient(to top left, #fff1eb 0%, #ace0f9 100%);
 }
 
 #profile_ttl{
@@ -231,13 +224,8 @@
     background: url(../img/blue-gf5c94b144_1920.jpg) no-repeat 50% 0;
     padding-top: 300px;
     box-sizing: border-box;
-    /* animation: zoom-a 5s ease-out; */
 }
 
-@keyframes zoom-a{
-    0% {background-size: 150% auto;}
-    100% {background-size: 100% auto;}
-}
 
 #skill_ttl{
     display: none;
@@ -279,7 +267,6 @@
     font-size: 25px;
     font-weight: 600;
     text-align: center;
-    /* color: #5683ff; */
     color: rgba(70,129,255,0.8);
 }
 
@@ -312,7 +299,7 @@
     height: 100vh;
     padding-top: 100px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-image: linear-gradient(to top left, #fff1eb 0%, #ace0f9 100%);
     position: relative;
 }
 
@@ -409,7 +396,6 @@
     padding-top: 300px;
     text-align: center;
     position: relative;
-    /* line-height: 100vh; */
 }
 
 #contact h3{
@@ -425,7 +411,6 @@
     height: 150px;
     cursor: pointer;
     position: relative;
-    /* background-color: #6AB4E1; */
     background: url(../img/icon/cloud-computing_1.png) no-repeat 50% 0;
     background-size: 150px;
     display: flex;
@@ -470,7 +455,15 @@
 
 #contact_box .contact_box_close_btn{
     float: right;
+    margin: 15px 15px;
     padding: 15px 15px;
+    border-radius: 50%;
+    background-color: #6AB4E1;
+    color: #fff;
+    font-size: medium;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 #form{

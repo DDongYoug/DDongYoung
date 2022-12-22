@@ -46,6 +46,9 @@
 #main{
     z-index: 0;
     padding: 180px 0;
+    animation: none;
+    background-size: auto 100%;
+    height: auto;
 }
 
 #main_in h2{
@@ -64,10 +67,10 @@
 /* -----------프로필 -------------- */
 #profile{
     z-index: 0;
-    padding: 0 20px;
     padding-top: 70px;
     box-sizing: border-box;
     position: relative;
+    height: auto;
 }
 
 #profile_ttl{
@@ -82,14 +85,14 @@
 #profile_in{
     margin: 0;
     width: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: unset;
 }
 
 #profile_in .img_box{
     margin-right: 0;
+    width: 90%;
+    height: 90vw;
 }
 
 #profile_in .txt_box{

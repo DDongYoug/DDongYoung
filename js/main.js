@@ -1,22 +1,31 @@
 $(document).ready(function(){
     if(window.innerWidth>480){
+        $('#wrap #main').css('z-index', '100')
         $('#wrap .nav li').eq(0).addClass('on')
-    //네비 버튼 클릭시 해당div로 이동
-    let current=0  //현재 div 요소의 상태값을 설정
-    let moving_stop=false  //지연함수를 주기 위한 상태값설정
-
-    $('#wrap .nav li').click(function(e){
-        e.preventDefault()
-        var i=$(this).index()
+        //네비 버튼 클릭시 해당div로 이동
+        let current=0  //현재 div 요소의 상태값을 설정
+        let moving_stop=false  //지연함수를 주기 위한 상태값설정
         
-        if(i>current){
-            moveUp(i)
-        }else if(i<current){
-            moveDown(i)
-        }else{
-            return
-        }
-    })
+        $('#wrap #header .logo').click(function(){
+            if(current==0){
+                return
+            }else{
+                moveDown(0)
+            }
+        })
+
+        $('#wrap .nav li').click(function(e){
+            e.preventDefault()
+            var i=$(this).index()
+            
+            if(i>current){
+                moveUp(i)
+            }else if(i<current){
+                moveDown(i)
+            }else{
+                return
+            }
+        })
 
 
     //애니메이션이 실행되는 동안 다른 동작을 막기 위해서
@@ -37,14 +46,13 @@ $(document).ready(function(){
             var nextEl=$('#wrap #total_box>div').eq(n)    
 
             currentEl.css('z-index','50')
-            nextEl.css('z-index','30').css({left: '0', top: '0'}).css('animation','zoom-a 5s ease-out')
+            nextEl.css('z-index','30').css({left: '0', top: '0'})
             currentEl.css({top: '0'}).animate({top: '-100vh'},1000)
 
             // 네비버튼색 바꾸기
             switch(n){
                 case 0: 
                     $('#wrap .nav li').eq(n).addClass('on')
-                    zoomout(n)
                     break
                 
                 case 1: case 3:
@@ -55,12 +63,10 @@ $(document).ready(function(){
                 case 2:
                     $('#wrap .nav li').eq(n).addClass('on1')
                     skillAni()
-                    zoomout(n)
                     break
 
                 case 4:
                     $('#wrap .nav li').eq(n).addClass('on1')
-                    zoomout(n)
                     break
             }
 
@@ -87,7 +93,6 @@ $(document).ready(function(){
             switch(n){
                 case 0: 
                     $('#wrap .nav li').eq(n).addClass('on')
-                    zoomout(n)
                     break
                 
                 case 1: case 3:
@@ -98,12 +103,10 @@ $(document).ready(function(){
                 case 2:
                     $('#wrap .nav li').eq(n).addClass('on1')
                     skillAni()
-                    zoomout(n)
                     break
 
                 case 4:
                     $('#wrap .nav li').eq(n).addClass('on1')
-                    zoomout(n)
                     break
             }
             
@@ -130,7 +133,7 @@ $(document).ready(function(){
         let zoomdiv=$('#wrap #total_box>div').eq(k)
 
         $('#wrap #total_box>div').css('animation','none')
-        zoomdiv.css('animation','zoom-a 5s ease-out')
+        zoomdiv.css('animation','zoom-a 3s ease-out')
 
     }
 
