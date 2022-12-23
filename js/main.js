@@ -2,9 +2,10 @@ $(document).ready(function(){
     if(window.innerWidth>480){
         $('#wrap #main').css('z-index', '100')
         $('#wrap .nav li').eq(0).addClass('on')
-        //네비 버튼 클릭시 해당div로 이동
+        
         let current=0  //현재 div 요소의 상태값을 설정
-        let moving_stop=false  //지연함수를 주기 위한 상태값설정
+        let moving_stop=false  
+        // 화면전환 중에 다른 함수가 먹히지 않게하기 위한 상태값설정
         
         $('#wrap #header .logo').click(function(){
             if(current==0){
@@ -14,12 +15,13 @@ $(document).ready(function(){
             }
         })
 
+        //네비 버튼 클릭시 해당div로 이동
         $('#wrap .nav li').click(function(e){
             e.preventDefault()
             var i=$(this).index()
             
             if(i>current){
-                moveUp(i)
+                moveUp(i)   
             }else if(i<current){
                 moveDown(i)
             }else{
@@ -27,55 +29,39 @@ $(document).ready(function(){
             }
         })
 
+        function moveUp(n){
+            if(moving_stop==false){
+                moving_stop=true
+                $('#wrap #total_box>div').css('z-index','0')
+                $('#wrap .nav li').removeClass('on').removeClass('on1')
+                var currentEl=$('#wrap #total_box>div').eq(current)
+                var nextEl=$('#wrap #total_box>div').eq(n)    
 
-    //애니메이션이 실행되는 동안 다른 동작을 막기 위해서
-    //setTimeout 함수를 이용해 지연시간을 줌
-    const setTimeoutMS=function(){
-        setTimeout(() => {
-            moving_stop=false
-        }, 1000)
-    } 
+                currentEl.css('z-index','50')
+                nextEl.css('z-index','30').css({display:'block', left: '0', top: '0'})
+                currentEl.css({top: '0'}).animate({top: '-100vh'},1000,function(){
+                    currentEl.css({display: 'none'})
+                    current=n
+                    moving_stop=false
+                })
 
-
-    function moveUp(n){
-        if(moving_stop==false){
-            moving_stop=true
-            $('#wrap #total_box>div').css('z-index','0')
-            $('#wrap .nav li').removeClass('on').removeClass('on1')
-            var currentEl=$('#wrap #total_box>div').eq(current)
-            var nextEl=$('#wrap #total_box>div').eq(n)    
-
-            currentEl.css('z-index','50')
-            nextEl.css('z-index','30').css({left: '0', top: '0'})
-            currentEl.css({top: '0'}).animate({top: '-100vh'},1000)
-
-            // 네비버튼색 바꾸기
-            switch(n){
-                case 0: 
-                    $('#wrap .nav li').eq(n).addClass('on')
-                    break
+                // 네비버튼색 바꾸기
+                switch(n){
+                    case 0: case 1: case 3:
+                        $('#wrap .nav li').eq(n).addClass('on')
+                        break
                 
-                case 1: case 3:
-                    $('#wrap .nav li').eq(n).addClass('on')
-                    break
+                    case 2:
+                        $('#wrap .nav li').eq(n).addClass('on1')
+                        skillAni()
+                        break
 
-                
-                case 2:
-                    $('#wrap .nav li').eq(n).addClass('on1')
-                    skillAni()
-                    break
-
-                case 4:
-                    $('#wrap .nav li').eq(n).addClass('on1')
-                    break
+                    case 4:
+                        $('#wrap .nav li').eq(n).addClass('on1')
+                        break
+                }
             }
-
-            
-
-            current=n
-            setTimeoutMS()
         }
-    }
 
     function moveDown(n){
         if(moving_stop==false){
@@ -87,18 +73,16 @@ $(document).ready(function(){
 
             currentEl.css('z-index','30')
             nextEl.css('z-index','50')
-            nextEl.css({top: '-100vh'}).animate({top: '0'},1000)
+            nextEl.css({display: 'block', top: '-100vh'}).animate({top: '0'},1000,function(){
+                moving_stop=false
+                current=n
+            })
             
-            // 첫화면 마지막화면 버튼 숨기기, 네비버튼 Class
+            // 네비버튼 addClass
             switch(n){
-                case 0: 
+                case 0: case 1: case 3:
                     $('#wrap .nav li').eq(n).addClass('on')
                     break
-                
-                case 1: case 3:
-                    $('#wrap .nav li').eq(n).addClass('on')
-                    break
-
                 
                 case 2:
                     $('#wrap .nav li').eq(n).addClass('on1')
@@ -109,9 +93,6 @@ $(document).ready(function(){
                     $('#wrap .nav li').eq(n).addClass('on1')
                     break
             }
-            
-            current=n
-            setTimeoutMS()
         }
         
     }
@@ -126,16 +107,6 @@ $(document).ready(function(){
             moveUp(mousewheelDown)
         }
     })
-
-
-    //배경확대
-    const zoomout=(k)=>{
-        let zoomdiv=$('#wrap #total_box>div').eq(k)
-
-        $('#wrap #total_box>div').css('animation','none')
-        zoomdiv.css('animation','zoom-a 3s ease-out')
-
-    }
 
     //스킬
 
@@ -202,7 +173,40 @@ $(document).ready(function(){
     // 프로젝트
     
 
+    let currentProject=0
 
+    $('#projects .left_btn').hide()
+    const moveLeft=()=>{
+        n=currentProject+1
+        $('#projects_in>ul').animate({left: (-1200)*n+'px'},1000)
+        currentProject=n
+        if(currentProject==2){
+            $('#projects .right_btn').hide()
+        }else if(currentProject==1){
+            $('#projects .left_btn').show()
+        }
+        
+    }
+
+    const moveRight=()=>{
+        n=currentProject-1
+        $('#projects_in>ul').animate({left: (-1200)*n+'px'},1000)
+        currentProject=n
+        if(currentProject==0){
+            $('#projects .left_btn').hide()
+        }else if(currentProject==1){
+            $('#projects .right_btn').show()
+        }
+        
+    }
+
+    $('#projects .right_btn').click(()=>{
+        moveLeft()
+    })  
+
+    $('#projects .left_btn').click(()=>{
+        moveRight()
+    })
 
 
 
