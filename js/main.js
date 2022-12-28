@@ -2,6 +2,7 @@ $(document).ready(function(){
     if(window.innerWidth>480){
         $('#wrap #main').css('z-index', '100')
         $('#wrap .nav li').eq(0).addClass('on')
+        mouseBtnUp()
         
         let current=0  //현재 div 요소의 상태값을 설정
         let moving_stop=false  
@@ -51,14 +52,10 @@ $(document).ready(function(){
                         $('#wrap .nav li').eq(n).addClass('on')
                         break
                 
-                    case 2:
+                    case 2: case 4:
                         $('#wrap .nav li').eq(n).addClass('on1')
-                        skillAni()
                         break
 
-                    case 4:
-                        $('#wrap .nav li').eq(n).addClass('on1')
-                        break
                 }
             }
         }
@@ -84,12 +81,7 @@ $(document).ready(function(){
                     $('#wrap .nav li').eq(n).addClass('on')
                     break
                 
-                case 2:
-                    $('#wrap .nav li').eq(n).addClass('on1')
-                    skillAni()
-                    break
-
-                case 4:
+                case 2: case 4:
                     $('#wrap .nav li').eq(n).addClass('on1')
                     break
             }
@@ -108,62 +100,7 @@ $(document).ready(function(){
         }
     })
 
-    //스킬
-
-    const skillAni=()=>{setTimeout(() => {
-            $('#wrap .chart').circleProgress({
-                size:200,
-                //그래프 크기
-                startAngle: -Math.PI/2 ,
-                //시작지점 (기본값 Math.PI)
-                thickness:30,
-                //그래프두께
-                fill: {gradient: ['#ff1e41', '#ff9f8e']},
-                //그래프 선 색
-                emptyFill: "rgba(0,0,0,0.3)",
-                //그래프 빈칸색 기본값 rgba(0,0,0,0.1)
-                fill: {gradient: ['#ff1e41', '#ff9f8e']},
-            })
-        
-            $('#wrap .chart1').circleProgress({
-                value: 0.9,
-                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
-            }).on('circle-animation-progress', function(event, progress) {
-                $(this).find('strong').html(Math.round(90 *progress) + '<i>%</i>');
-            });
-        
-            $('#wrap .chart2').circleProgress({
-                value: 0.8,
-                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
-            }).on('circle-animation-progress', function(event, progress) {
-                $(this).find('strong').html(Math.round(80 *progress) + '<i>%</i>');
-            });
-        
-            $('#wrap .chart3').circleProgress({
-                value: 0.8,
-                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
-            }).on('circle-animation-progress', function(event, progress) {
-                $(this).find('strong').html(Math.round(80 *progress) + '<i>%</i>');
-            });
-        
-            $('#wrap .chart4').circleProgress({
-                value: 0.7,
-                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
-            }).on('circle-animation-progress', function(event, progress) {
-                $(this).find('strong').html(Math.round(70 *progress) + '<i>%</i>');
-            });
-        
-            $('#wrap .chart5').circleProgress({
-                value: 0.1,
-                fill: {gradient: ['rgba(34,176,255,1)', 'rgba(255,255,255,1)']}
-            }).on('circle-animation-progress', function(event, progress) {
-                $(this).find('strong').html(Math.round(10 *progress) + '<i>%</i>');
-            });
-        
-    }, 1000);}
-            
     
-
 
 
 
@@ -178,7 +115,7 @@ $(document).ready(function(){
     $('#projects .left_btn').hide()
     const moveLeft=()=>{
         n=currentProject+1
-        $('#projects_in>ul').animate({left: (-1200)*n+'px'},1000)
+        $('#projects_in>ul').animate({left: (-1200)*n+'px'},500)
         currentProject=n
         if(currentProject==2){
             $('#projects .right_btn').hide()
@@ -190,7 +127,7 @@ $(document).ready(function(){
 
     const moveRight=()=>{
         n=currentProject-1
-        $('#projects_in>ul').animate({left: (-1200)*n+'px'},1000)
+        $('#projects_in>ul').animate({left: (-1200)*n+'px'},500)
         currentProject=n
         if(currentProject==0){
             $('#projects .left_btn').hide()
@@ -274,6 +211,14 @@ $(document).ready(function(){
         alert(JSON.stringify(err));
         });
     });
+
+
+    // 마우스버튼 나타나는 함수
+    function mouseBtnUp(){
+        $('#mouse_btn').css({bottom: '-100px'}).animate({bottom: '30px'},1000)
+    }
+
+
 
     }
     
