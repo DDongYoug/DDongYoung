@@ -90,12 +90,15 @@
 }
 
 #mouse_btn img{
+    display: block;
     width: 100%;
+    
 }
 
 #mouse_btn p{
     font-weight: 900;
 }
+
 
 
 
@@ -320,6 +323,16 @@
     color: rgba(70,129,255,0.8);
 }
 
+
+.skill_info_box_bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 800;
+    background-color: rgb(255, 255, 255, 0.8);
+}
 
 
 /* 스킬 모바일용 */
@@ -579,17 +592,18 @@
 }
 
 #contact_box .contact_box_close_btn{
+    display: inline-block;
     float: right;
-    margin: 15px 15px;
-    padding: 15px 15px;
-    border-radius: 50%;
-    background-color: #6AB4E1;
-    color: #fff;
-    font-size: medium;
-    font-weight: bold;
-    border: none;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
+
+#contact_box .contact_box_close_btn img{
+    width: 100%;
+}
+
 
 #form{
     margin: 0 auto;

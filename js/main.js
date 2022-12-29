@@ -105,6 +105,13 @@ $(document).ready(function(){
 
 
 
+    // 스킬
+    $('#skill_in>ul>li').click(function(){
+        $('#wrap').append('<div class="skill_info_box_bg"></div>')
+    })
+
+
+
 
 
     // 프로젝트
@@ -148,37 +155,22 @@ $(document).ready(function(){
 
 
 
-
-    // 마치며
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // contact박스
     let contactOpen='closed'
 
     $('#wrap .contact_box_open_btn').click(()=>{
         if(contactOpen=='closed'){
             contactOpen='open'
-            $('#wrap #contact_box').css({display: 'block'})
+            $('#wrap #contact_box').css({opacity: '0', display: 'block'}).animate({opacity: '1'},800)
         }
     })
 
     $('#wrap .contact_box_close_btn').click(()=>{
         if(contactOpen=='open'){
             contactOpen='closed'
-            $('#wrap #contact_box').css({display: 'none'})
+            $('#wrap #contact_box').animate({opacity:'0'},800,function(){
+                $(this).css({display: 'none'})
+            })
         }
     })
 
