@@ -5,6 +5,9 @@
     font-style: normal;
 }
 
+*{
+    font-family: 'S-CoreDream-3Light';
+}
 
 #wrap{
     width: 100%;
@@ -82,6 +85,7 @@
     position: absolute;
     bottom: 30px;
     left: 50%;
+    margin-left: -25px;
     width: 50px;
     height: auto;
     z-index: 200;
@@ -183,28 +187,29 @@
 
 #profile_in{
     margin: 0 auto;
-    width: 1000px;
+    width: 1200px;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* background-color: violet; */
 }
 
 #profile_in .img_box{
-    margin-right: 100px;
     width: 500px;
-    height: 450px;
+    height: 500px;
     border-radius: 50%;
     background: url(../img/IMG_20190131_133656_505.jpg) no-repeat 50% 100%;
-    background-size: 500px;
+    background-size: 600px;
 }
 
 #profile_in .txt_box{
-    width: 500px;
-    height: 450px;
+    width: 600px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* background-color: #ace0f9; */
 }
 
 #profile_in .txt_box h3{
@@ -217,6 +222,15 @@
     font-size: 25px;
     font-weight: 400;
     line-height: 35px;
+}
+
+#profile_in .txt_box .edu_box p{
+    font-size: 15px;
+}
+
+#profile_in .txt_box .edu_box span{
+    display: inline-block;
+    width: 100px;
 }
 
 #profile_in .site_box{
@@ -277,9 +291,10 @@
 #skill_in{
     margin: 0 auto;
     width: 1500px;
-    height: 800px;
+    height: 650px;
     padding-top: 200px;
     box-sizing: border-box;
+    /* background-color: #3888ff; */
 }
 
 #skill_in>ul{
@@ -308,7 +323,7 @@
     height: 180px;
     overflow: hidden;
     margin-bottom: 40px;
-    line-height: 190px;
+    line-height: 180px;
 }
 
 #skill_in>ul .skill_img img{
@@ -323,16 +338,111 @@
     color: rgba(70,129,255,0.8);
 }
 
+#skill_in .skill_txt_box{
+    display: none;
+}
+
+#skill .click_msg{
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+    font-size: 30px;
+    color: #4460AA;
+    /* background-color: #ccc */
+}
+
 
 .skill_info_box_bg{
+    display: none;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100vh;
     z-index: 800;
-    background-color: rgb(255, 255, 255, 0.8);
+    background-color: rgba(190, 190, 190, 0.8);
+
 }
+
+.skill_info_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: -300px;
+    width: 1000px;
+    height: 600px;
+    z-index: 999;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+}
+
+.skill_info_box .skill_img_box{
+    width: 300px;
+    height: 500px;
+    padding-right: 50px;
+    border-right: 1px solid #ccc;
+    /* background-color: #fff1eb; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.skill_info_box .skill_img{
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+}
+
+.skill_info_box .skill_img img{
+    width: 100%;
+}
+
+.skill_info_box h5{
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    color: rgba(70,129,255,0.8);
+}
+
+
+
+.skill_info_box .skill_txt_box{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: #ace0f9; */
+}
+
+.skill_info_box .skill_txt{
+    width: 100%;
+    height: 200px;
+    font-size: 20px;
+    line-height: 50px;
+
+    /* background-color: #fff1eb; */
+}
+
+.skill_info_box .skill_use{
+    width: 100%;
+    height: 150px;
+    font-size: 20px;
+    line-height: 40px;
+    /* background-color: #ccc; */
+}
+
+
 
 
 /* 스킬 모바일용 */
@@ -465,6 +575,10 @@
 
 #projects_in .txt_box .info{
     font-size: 20px;
+    line-height: 30px;
+}
+
+#projects_in .txt_box .skills{
     line-height: 30px;
 }
 

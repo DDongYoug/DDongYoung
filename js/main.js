@@ -106,10 +106,22 @@ $(document).ready(function(){
 
 
     // 스킬
+    let clickedEl
     $('#skill_in>ul>li').click(function(){
-        $('#wrap').append('<div class="skill_info_box_bg"></div>')
+        $('.skill_info_box_bg').css({'display': 'flex'})
+        $('#wrap').append('<div class="skill_info_box"></div>')
+        clickedEl=$(this).html()
+        console.log(clickedEl)
+        $('.skill_info_box').append(clickedEl).animate({'opacity': '1'}, 500)
+        // $('.skill_info_box .skill_txt_box').css({'display': 'flex'})
     })
 
+    
+    $('.skill_info_box_bg').click(function(){
+        $('.skill_info_box').remove()
+        $(this).css({'display':'none'})
+        
+    })
 
 
 
