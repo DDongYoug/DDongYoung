@@ -574,12 +574,15 @@
 }
 
 #projects_in .txt_box .info{
-    font-size: 20px;
+    font-size: 15px;
     line-height: 30px;
+    text-align: justify;
 }
 
 #projects_in .txt_box .skills{
     line-height: 30px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 #projects_in .txt_box a{

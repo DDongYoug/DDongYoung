@@ -136,7 +136,7 @@ $(document).ready(function(){
         n=currentProject+1
         $('#projects_in>ul').animate({left: (-1200)*n+'px'},500)
         currentProject=n
-        if(currentProject==2){
+        if(currentProject==3){
             $('#projects .right_btn').hide()
         }else if(currentProject==1){
             $('#projects .left_btn').show()
