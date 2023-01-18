@@ -94,20 +94,20 @@
 }
 
 #profile_in .txt_box h3 {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 25px;
+  line-height: 35px;
   margin-bottom: 10px;
 }
 
 #profile_in .txt_box p {
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 15px;
+  line-height: 25px;
   margin-bottom: 20px;
 }
 
 #profile_in .txt_box .edu_box p {
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 18px;
   font-weight: 100;
 }
 
@@ -120,6 +120,10 @@
   width: 100%;
   height: 120px;
   justify-content: space-around;
+}
+
+#profile_in .site_box a {
+  margin-right: 0;
 }
 
 /* --------------스킬-------------- */
@@ -163,7 +167,7 @@
 #skill_in > ul > li {
   margin: 0 auto;
   margin-bottom: 10px;
-  width: 170px;
+  width: 40vw;
   height: 220px;
   padding: 10px 0;
   transition: none;
@@ -171,10 +175,10 @@
 
 #skill_in > ul .skill_img {
   margin: 0 auto;
-  width: 150px;
-  height: 150px;
+  width: 90%;
+  height: 40vw;
   margin-bottom: 20px;
-  line-height: 150px;
+  line-height: 40vw;
 }
 
 #skill_in h5 {
@@ -189,9 +193,8 @@
   margin: 0 auto;
   width: 90%;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   color: #4460aa;
-  /* background-color: #ccc */
 }
 
 .skill_info_box_bg {
