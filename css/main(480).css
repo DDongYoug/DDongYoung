@@ -203,10 +203,10 @@
 
 .skill_info_box {
   position: fixed;
-  margin-left: -175px;
-  margin-top: -300px;
-  width: 350px;
-  height: 600px;
+  margin-left: -150px;
+  margin-top: -250px;
+  width: 300px;
+  height: 500px;
   padding: 20px 20px;
   flex-direction: column;
   justify-content: unset;
@@ -214,7 +214,7 @@
 
 .skill_info_box .skill_img_box {
   width: 100%;
-  height: 200px;
+  height: 180px;
   padding-right: 0;
   border-right: 0;
   display: flex;
@@ -236,22 +236,24 @@
 
 .skill_info_box .skill_txt_box {
   width: 100%;
-  height: 400px;
+  height: 280px;
   align-items: center;
 }
 
 .skill_info_box .skill_txt {
   width: 90%;
-  height: 300px;
+  height: 190px;
   font-size: 15px;
   line-height: 25px;
+  background-color: #3888ff;
 }
 
 .skill_info_box .skill_use {
   width: 90%;
-  height: 100px;
+  height: 80px;
   font-size: 15px;
   line-height: 25px;
+  background-color: rgb(155, 208, 255);
 }
 
 /* 프로젝트 */
